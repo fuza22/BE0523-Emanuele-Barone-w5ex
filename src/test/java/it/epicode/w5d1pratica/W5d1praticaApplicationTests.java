@@ -5,6 +5,8 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -107,6 +109,18 @@ class W5d1praticaApplicationTests {
 				() -> assertTrue(menu.getToppings().contains(prosciutto))
 
 		);
+
+	}
+
+
+	@ParameterizedTest
+	@ValueSource(ints = {200, 250})
+	void verificaCalorieProsciutto(int calorie){
+
+
+		Topping prosciutto = ctx.getBean("prosciutto", Topping.class);
+		Assertions.assertEquals(calorie, prosciutto.getCalorie());
+
 
 	}
 
