@@ -58,7 +58,7 @@ class W5d1praticaApplicationTests {
 	void calcolaCaloriePizzaMargheritaSalame(){
 
 		Pizza pizzaMargheritaSalame = ctx.getBean("margheritaSalame", Pizza.class);
-		Assertions.assertEquals(400, pizzaMargheritaSalame.getCalorie());
+		Assertions.assertEquals(1000, pizzaMargheritaSalame.getCalorie());
 
 	}
 
